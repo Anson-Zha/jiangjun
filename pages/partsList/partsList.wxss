@@ -1,0 +1,273 @@
+.page {
+  min-height: 100vh;
+  padding: 48rpx 32rpx 64rpx;
+  box-sizing: border-box;
+  background: linear-gradient(155deg, #f5f7ff 0%, #f9fbff 50%, #fff7f0 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 32rpx;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 32rpx;
+}
+
+.search-area {
+  display: flex;
+  gap: 24rpx;
+  align-items: center;
+}
+
+.search-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 18rpx 24rpx;
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 22rpx;
+  box-shadow: 0 16rpx 32rpx rgba(45, 115, 255, 0.1);
+}
+
+.search-input {
+  flex: 1;
+  margin: 0 18rpx;
+  font-size: 26rpx;
+  color: #203154;
+}
+
+.search-placeholder {
+  color: #9aa8c1;
+}
+
+.actions {
+  display: flex;
+  gap: 16rpx;
+}
+
+.action-item {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 24rpx;
+  background: rgba(255, 255, 255, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #60708d;
+  font-size: 36rpx;
+  box-shadow: 0 16rpx 30rpx rgba(45, 115, 255, 0.12);
+}
+
+.action-item--primary {
+  background: linear-gradient(135deg, rgba(43, 123, 255, 0.12), rgba(100, 176, 255, 0.25));
+  color: #2b7bff;
+}
+
+.tab-bar {
+  display: flex;
+  gap: 24rpx;
+}
+
+.tab {
+  flex: 1;
+  padding: 26rpx 30rpx;
+  border-radius: 26rpx;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: inset 0 0 0 1rpx rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+  color: #4b5d7d;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tab.active {
+  transform: translateY(-4rpx);
+  box-shadow: 0 18rpx 32rpx rgba(43, 123, 255, 0.18);
+}
+
+.tab-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tab-label {
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.tab-count {
+  padding: 4rpx 16rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999rpx;
+  font-size: 22rpx;
+}
+
+.tab-tip {
+  font-size: 24rpx;
+  opacity: 0.82;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.card {
+  padding: 28rpx 32rpx;
+  border-radius: 28rpx;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18rpx 36rpx rgba(45, 115, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24rpx;
+}
+
+.order-no {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #1c2f60;
+}
+
+.date-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6rpx;
+  color: #2b7bff;
+}
+
+.date-value {
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.date-hint {
+  font-size: 22rpx;
+  opacity: 0.75;
+}
+
+.company {
+  font-size: 26rpx;
+  color: #3a4b6f;
+  line-height: 1.4;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+  color: #566789;
+}
+
+.meta-item {
+  display: flex;
+  align-items: baseline;
+  gap: 12rpx;
+}
+
+.meta-label {
+  font-size: 24rpx;
+  opacity: 0.7;
+}
+
+.meta-value {
+  font-size: 26rpx;
+  font-weight: 600;
+}
+
+.meta-divider {
+  width: 2rpx;
+  height: 32rpx;
+  background: rgba(33, 114, 255, 0.18);
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status-badge {
+  padding: 8rpx 20rpx;
+  border-radius: 999rpx;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.status-success {
+  background: rgba(46, 204, 113, 0.16);
+  color: #1e9156;
+}
+
+.status-warning {
+  background: rgba(255, 193, 7, 0.18);
+  color: #b06b00;
+}
+
+.status-waiting {
+  background: rgba(45, 115, 255, 0.12);
+  color: #2b7bff;
+}
+
+.link-button {
+  font-size: 26rpx;
+  font-weight: 600;
+}
+
+.link-primary {
+  color: #2b7bff;
+}
+
+.link-secondary {
+  color: #f39c12;
+}
+
+.link-success {
+  color: #1e9156;
+}
+
+.empty {
+  margin-top: 80rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24rpx;
+}
+
+.empty-illustration {
+  width: 360rpx;
+  height: 240rpx;
+}
+
+.empty-card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 28rpx;
+  padding: 36rpx 40rpx;
+  box-shadow: 0 16rpx 30rpx rgba(54, 107, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+  text-align: center;
+}
+
+.empty-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #1c2f60;
+}
+
+.empty-desc {
+  font-size: 24rpx;
+  color: #5e6f90;
+}

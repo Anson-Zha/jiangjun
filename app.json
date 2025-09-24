@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/install/install"
+    "pages/install/install",
+    "pages/partsList/partsList"
   ],
   "window": {
     "navigationBarTitleText": "安装单",
