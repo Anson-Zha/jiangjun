@@ -65,5 +65,18 @@ Page({
       title: '点击新增',
       icon: 'none'
     });
+  },
+
+  handleGoHome() {
+    const pages = getCurrentPages();
+    if (pages.length > 1) {
+      wx.navigateBack({ delta: pages.length - 1 });
+      return;
+    }
+
+    wx.showToast({
+      title: '已在主页',
+      icon: 'none'
+    });
   }
 });

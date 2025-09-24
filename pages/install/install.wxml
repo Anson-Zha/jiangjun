@@ -1,8 +1,10 @@
 <view class="page">
   <view class="toolbar">
-    <icon type="home" size="24" color="#333" />
+    <button class="home-button" bindtap="handleGoHome" hover-class="home-button--active">
+      <icon type="home" size="20" color="#1f6fff" />
+      <text>回到主页</text>
+    </button>
     <view class="toolbar-actions">
-      <icon type="search" size="24" color="#333" />
       <icon type="more" size="24" color="#333" />
     </view>
   </view>
