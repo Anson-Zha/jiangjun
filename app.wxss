@@ -1,0 +1,17 @@
+/** app.wxss **/
+page {
+  background-color: #f5f6f8;
+  font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.container {
+  padding: 20rpx 24rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.section-title {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 600;
+  margin: 24rpx 0;
+}

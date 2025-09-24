@@ -1,0 +1,71 @@
+<view class="page">
+  <view class="toolbar">
+    <icon type="home" size="24" color="#333" />
+    <view class="toolbar-actions">
+      <icon type="search" size="24" color="#333" />
+      <icon type="more" size="24" color="#333" />
+    </view>
+  </view>
+
+  <view class="tabs">
+    <block wx:for="{{tabs}}" wx:key="id">
+      <view
+        class="tab-item {{activeTab === item.id ? 'active' : ''}}"
+        data-id="{{item.id}}"
+        bindtap="switchTab"
+      >
+        {{item.label}}
+      </view>
+    </block>
+  </view>
+
+  <view class="search-box">
+    <icon type="search" size="18" color="#888" />
+    <input
+      class="search-input"
+      value="{{searchValue}}"
+      placeholder="请输入报修卡号或用户电话"
+      placeholder-class="search-placeholder"
+      bindinput="onSearchInput"
+    />
+    <icon
+      wx:if="{{searchValue}}"
+      type="clear"
+      size="18"
+      color="#bbb"
+      bindtap="clearSearch"
+    />
+  </view>
+
+  <view class="create-card" bindtap="handleCreate">
+    <text class="plus">＋</text>
+    <text>新增</text>
+  </view>
+
+  <view class="list">
+    <block wx:for="{{activeTab === 'pending' ? pendingList : finishedList}}" wx:key="cardNo">
+      <view class="card">
+        <view class="card-row">
+          <text class="label">报修卡号</text>
+          <text class="value">{{item.cardNo}}</text>
+        </view>
+        <view class="card-row">
+          <text class="label">用户姓名</text>
+          <text class="value">{{item.userName}}</text>
+        </view>
+        <view class="card-row">
+          <text class="label">用户地址</text>
+          <text class="value address">{{item.address}}</text>
+        </view>
+        <view class="card-row">
+          <text class="label">用户电话</text>
+          <text class="value">{{item.phone}}</text>
+        </view>
+        <view class="card-row">
+          <text class="label">安装日期</text>
+          <text class="value">{{item.installDate}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
