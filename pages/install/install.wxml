@@ -1,73 +1,97 @@
 <view class="page">
-  <view class="toolbar">
-    <button class="home-button" bindtap="handleGoHome" hover-class="home-button--active">
-      <icon type="home" size="20" color="#1f6fff" />
-      <text>回到主页</text>
-    </button>
-    <view class="toolbar-actions">
-      <icon type="more" size="24" color="#333" />
+  <view class="header">
+    <view class="header-top">
+      <view class="home-button" bindtap="handleGoHome" hover-class="home-button--active">
+        <view class="home-icon">
+          <icon type="home" size="18" color="#ffffff" />
+        </view>
+        <view class="home-texts">
+          <text class="home-label">回到主页</text>
+          <text class="home-desc">返回概览信息</text>
+        </view>
+      </view>
+      <view class="header-status">
+        <text class="status-title">安装单</text>
+        <text class="status-subtitle">高效管理每一个服务进度</text>
+      </view>
+    </view>
+    <view class="header-info">
+      <view class="info-item">
+        <text class="info-label">待回访</text>
+        <text class="info-value">{{pendingList.length}}</text>
+      </view>
+      <view class="info-divider"></view>
+      <view class="info-item">
+        <text class="info-label">已完成</text>
+        <text class="info-value">{{finishedList.length}}</text>
+      </view>
     </view>
   </view>
 
-  <view class="tabs">
-    <block wx:for="{{tabs}}" wx:key="id">
-      <view
-        class="tab-item {{activeTab === item.id ? 'active' : ''}}"
-        data-id="{{item.id}}"
-        bindtap="switchTab"
-      >
-        {{item.label}}
+  <view class="content">
+    <view class="tabs">
+      <block wx:for="{{tabs}}" wx:key="id">
+        <view
+          class="tab-item {{activeTab === item.id ? 'active' : ''}}"
+          data-id="{{item.id}}"
+          bindtap="switchTab"
+        >
+          {{item.label}}
+        </view>
+      </block>
+    </view>
+
+    <view class="search-box">
+      <icon type="search" size="18" color="#888" />
+      <input
+        class="search-input"
+        value="{{searchValue}}"
+        placeholder="请输入报修卡号或用户电话"
+        placeholder-class="search-placeholder"
+        bindinput="onSearchInput"
+      />
+      <icon
+        wx:if="{{searchValue}}"
+        type="clear"
+        size="18"
+        color="#bbb"
+        bindtap="clearSearch"
+      />
+    </view>
+
+    <view class="create-card" bindtap="handleCreate">
+      <view class="plus">＋</view>
+      <view class="create-texts">
+        <text class="create-title">新增安装单</text>
+        <text class="create-subtitle">快速录入新的服务信息</text>
       </view>
-    </block>
-  </view>
+    </view>
 
-  <view class="search-box">
-    <icon type="search" size="18" color="#888" />
-    <input
-      class="search-input"
-      value="{{searchValue}}"
-      placeholder="请输入报修卡号或用户电话"
-      placeholder-class="search-placeholder"
-      bindinput="onSearchInput"
-    />
-    <icon
-      wx:if="{{searchValue}}"
-      type="clear"
-      size="18"
-      color="#bbb"
-      bindtap="clearSearch"
-    />
-  </view>
-
-  <view class="create-card" bindtap="handleCreate">
-    <text class="plus">＋</text>
-    <text>新增</text>
-  </view>
-
-  <view class="list">
-    <block wx:for="{{activeTab === 'pending' ? pendingList : finishedList}}" wx:key="cardNo">
-      <view class="card">
-        <view class="card-row">
-          <text class="label">报修卡号</text>
-          <text class="value">{{item.cardNo}}</text>
+    <view class="list">
+      <block wx:for="{{activeTab === 'pending' ? pendingList : finishedList}}" wx:key="cardNo">
+        <view class="card">
+          <view class="card-row">
+            <text class="label">报修卡号</text>
+            <text class="value">{{item.cardNo}}</text>
+          </view>
+          <view class="card-row">
+            <text class="label">用户姓名</text>
+            <text class="value">{{item.userName}}</text>
+          </view>
+          <view class="card-row">
+            <text class="label">用户地址</text>
+            <text class="value address">{{item.address}}</text>
+          </view>
+          <view class="card-row">
+            <text class="label">用户电话</text>
+            <text class="value">{{item.phone}}</text>
+          </view>
+          <view class="card-row">
+            <text class="label">安装日期</text>
+            <text class="value">{{item.installDate}}</text>
+          </view>
         </view>
-        <view class="card-row">
-          <text class="label">用户姓名</text>
-          <text class="value">{{item.userName}}</text>
-        </view>
-        <view class="card-row">
-          <text class="label">用户地址</text>
-          <text class="value address">{{item.address}}</text>
-        </view>
-        <view class="card-row">
-          <text class="label">用户电话</text>
-          <text class="value">{{item.phone}}</text>
-        </view>
-        <view class="card-row">
-          <text class="label">安装日期</text>
-          <text class="value">{{item.installDate}}</text>
-        </view>
-      </view>
-    </block>
+      </block>
+    </view>
   </view>
 </view>
